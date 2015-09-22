@@ -4,6 +4,12 @@
 		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
 		id="WebApp_ID" version="3.1">
 
+<!-- 监听器开始 -->
+<listener>
+<listener-class>testservlet.ServletListener</listener-class>
+</listener>
+<!-- 监听器结束 -->
+
 <!-- 过滤器开始 -->
 <filter>
 	<filter-name>ServletFilter</filter-name>

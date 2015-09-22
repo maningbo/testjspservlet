@@ -26,7 +26,7 @@ public class ServletDemoFirst extends HttpServlet{
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		System.out.println("我是init()方法！用来进行初始化工作");
+		System.out.println("ServletDemoFirst init()方法");
 	}
 
 	@Override
@@ -52,8 +52,6 @@ public class ServletDemoFirst extends HttpServlet{
 	@Override
 	public void destroy() {
 		super.destroy();
-		System.out.println("我是destroy()方法！用来进行销毁实例的工作");
+		System.out.println("ServletDemoFirst destroy()方法");
 	}
-	
-	
 }

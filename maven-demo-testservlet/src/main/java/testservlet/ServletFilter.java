@@ -26,7 +26,7 @@ public class ServletFilter implements Filter{
 	//项目启动时就已经进行读取 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		System.out.println("filter 初始化方法");
+		System.out.println("filter init()方法");
 		this.encoding = filterConfig.getInitParameter("encoding");
 		System.out.println(this.encoding);
 	}
@@ -54,5 +54,4 @@ public class ServletFilter implements Filter{
 		System.out.println("filter destroy()方法");
 		this.encoding = null;
 	}
-
 }
