@@ -1,6 +1,8 @@
 package testservlet;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Enumeration;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -8,6 +10,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *  ServletFilter.java
@@ -31,8 +34,17 @@ public class ServletFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		request.setCharacterEncoding(this.encoding);
-		System.out.println("===============11");
+		request.setCharacterEncoding(this.encoding);//设置编码格式
+		HttpServletRequest httpServletRequest = (HttpServletRequest)request;
+		Enumeration<String> headernames = httpServletRequest.getHeaderNames();
+		while(headernames.hasMoreElements()){
+			String headername = headernames.nextElement();
+			System.out.println(headername+":"+Collections.list(httpServletRequest.getHeaders(headername)).toString());
+		}
+		System.out.println(httpServletRequest.getCharacterEncoding());
+		System.out.println(httpServletRequest.getRequestURI());
+		System.out.println(httpServletRequest.getParameterMap());
+		System.out.println(httpServletRequest.getRemoteAddr());
 		chain.doFilter(request, response);
 	}
 

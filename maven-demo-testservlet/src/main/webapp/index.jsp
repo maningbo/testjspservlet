@@ -7,8 +7,9 @@
 <title>欢迎页</title>
 </head>
 <body>
-222222222222222顶顶顶
-<a href="/servlet/hello?name=ppppp等等">helloServlet</a>
+<p><a href="">刷新</a></p>
+<p>222222222222222顶顶顶</p>
+<p><a href="/servlet/hello?name=ppppp等等">helloServlet</a></p>
 <form action="/servlet/hello" method="post">
 	<input type="hidden" name="name" value="单独">
 	<input type="submit" value="提交">

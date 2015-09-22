@@ -4,6 +4,7 @@
 		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
 		id="WebApp_ID" version="3.1">
 
+<!-- 过滤器开始 -->
 <filter>
 	<filter-name>ServletFilter</filter-name>
 	<filter-class>testservlet.ServletFilter</filter-class>
@@ -14,9 +15,11 @@
 </filter>
 <filter-mapping>
 	<filter-name>ServletFilter</filter-name>
-	<url-pattern>/*</url-pattern>
+	<url-pattern>/servlet/*</url-pattern><!-- 过滤规则 -->
 </filter-mapping>
+<!-- 过滤器结束 -->
 
+<!-- servlet开始 -->
 <servlet>
 	<servlet-name>ServletDemoFirst</servlet-name>
 	<servlet-class>testservlet.ServletDemoFirst</servlet-class>
@@ -25,6 +28,7 @@
 	<servlet-name>ServletDemoFirst</servlet-name>
 	<url-pattern>/servlet/hello</url-pattern>
 </servlet-mapping>
+<!-- servlet结束 -->
 
 <session-config>
 	<session-timeout>2</session-timeout>
